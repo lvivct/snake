@@ -11,7 +11,7 @@ public:
 
 	void update();
 	void show_field();
-	void add_item(SnakeBody& item);
+	void add_item(SnakeBody* item);
 
 	~Field();
 };

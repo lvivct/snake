@@ -32,9 +32,9 @@ void Field::show_field()
 	}
 }
 
-void Field::add_item(SnakeBody& item)
+void Field::add_item(SnakeBody* item)
 {
-	field[item.location.x][item.location.y] = item.show_simbol;
+	field[item->location.y][item->location.x] = item->show_simbol;
 }
 
 Field::~Field()

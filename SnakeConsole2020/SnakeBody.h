@@ -9,6 +9,7 @@ protected:
 	SnakeBody* ptr_next;
 
 public:
+	virtual void move(char direction);
 	SnakeBody(Coor location, char show_simbol, SnakeBody* ptr_next = nullptr);
 };
 
