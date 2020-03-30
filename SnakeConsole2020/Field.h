@@ -1,5 +1,7 @@
 #pragma once
 #include "SnakeBody.h"
+#include"food.h"
+
 class Field
 {
 	char** field;
@@ -12,6 +14,7 @@ public:
 	void update();
 	void show_field();
 	void add_item(SnakeBody* item);
+	void add_item(food* item);
 
 	~Field();
 };

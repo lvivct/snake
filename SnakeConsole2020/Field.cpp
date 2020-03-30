@@ -37,6 +37,11 @@ void Field::add_item(SnakeBody* item)
 	field[item->location.y][item->location.x] = item->show_simbol;
 }
 
+void Field::add_item(food* item)
+{
+	field[item->location.y][item->location.x] = item->show_simbol;
+}
+
 Field::~Field()
 {
 	for (int i = 0; i < size; ++i)

@@ -4,12 +4,13 @@ class SnakeBody
 {
 	friend class Field;
 protected:
-	Coor location;
 	char show_simbol;
 	SnakeBody* ptr_next;
 
 public:
+	Coor location;
 	virtual void move(char direction);
 	SnakeBody(Coor location, char show_simbol, SnakeBody* ptr_next = nullptr);
+	SnakeBody* get_ptr_next();
 };
 

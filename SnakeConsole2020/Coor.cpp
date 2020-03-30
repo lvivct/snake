@@ -20,3 +20,8 @@ void Coor::move(char direction)
 		break;
 	}
 }
+
+bool Coor::operator==(Coor Right)
+{
+	return (x == Right.x && y == Right.y);
+}
