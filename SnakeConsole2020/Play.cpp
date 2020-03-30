@@ -15,15 +15,20 @@ void Play::start()
 		main_field->update();
 		char direction;
 		std::cin >> direction;
-		snake->move(direction);
 		SnakeBody* ptr = snake;
 		do
 		{
-			main_field->add_item(ptr);
+			ptr->move(direction);
+			main_field->add_item(ptr->get_ptr_next());
 			ptr = ptr->get_ptr_next();
 		} while (ptr != snake);
+
 		if (aplle->get_coor() == snake->get_coor())
+		{
 			aplle->change_location();
+			snake->increase_tail();
+		}
+
 		main_field->add_item(aplle);
 		
 		system("cls");

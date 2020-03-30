@@ -6,8 +6,11 @@ class SnakeBody : public Point
 protected:
 	SnakeBody* ptr_next;
 public:
-	virtual void move(char direction);
 	SnakeBody(Coor location, char show_simbol, SnakeBody* ptr_next = nullptr);
+
+	virtual void move(char direction);
+	virtual void increase_tail() {}
+
 	SnakeBody* get_ptr_next();
 };
 
