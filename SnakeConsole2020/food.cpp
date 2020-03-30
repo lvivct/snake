@@ -1,6 +1,6 @@
 #include "food.h"
 
-food::food(Coor location, char show_simbol) : location(location), show_simbol(show_simbol) { }
+food::food(Coor location, char show_simbol) : Point(location, show_simbol) { }
 
 void food::change_location()
 {

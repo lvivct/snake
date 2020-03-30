@@ -22,7 +22,7 @@ void Play::start()
 			main_field->add_item(ptr);
 			ptr = ptr->get_ptr_next();
 		} while (ptr != snake);
-		if (aplle->location == snake->location)
+		if (aplle->get_coor() == snake->get_coor())
 			aplle->change_location();
 		main_field->add_item(aplle);
 		

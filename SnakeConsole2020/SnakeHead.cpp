@@ -8,5 +8,5 @@ void SnakeHead::move(char direction)
 
 	if (this != ptr)	
 		ptr = ptr->get_ptr_next();
-	location.move(direction);
+	Point::move(direction);
 }

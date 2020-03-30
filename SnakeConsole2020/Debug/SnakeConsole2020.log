@@ -1,10 +1,2 @@
-﻿  Coor.cpp
-  Field.cpp
-  Play.cpp
-  SnakeBody.cpp
-  SnakeHead.cpp
-  Source.cpp
-  food.cpp
-E:\C++\Visual Studio Game\SnakeConsole2020\SnakeConsole2020\food.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
+﻿  SnakeHead.cpp
   SnakeConsole2020.vcxproj -> E:\C++\Visual Studio Game\SnakeConsole2020\Debug\SnakeConsole2020.exe

@@ -6,7 +6,7 @@ void SnakeBody::move(char direction)
 }
 
 SnakeBody::SnakeBody(Coor location, char show_simbol, SnakeBody* ptr_next)
-	:location(location), show_simbol(show_simbol), ptr_next(ptr_next) {	}
+	: Point(location, show_simbol), ptr_next(ptr_next) {	}
 
 SnakeBody* SnakeBody::get_ptr_next()
 {

@@ -32,14 +32,9 @@ void Field::show_field()
 	}
 }
 
-void Field::add_item(SnakeBody* item)
+void Field::add_item(Point* item)
 {
-	field[item->location.y][item->location.x] = item->show_simbol;
-}
-
-void Field::add_item(food* item)
-{
-	field[item->location.y][item->location.x] = item->show_simbol;
+	field[item->get_coor().y][item->get_coor().x] = item->get_show_simbol();
 }
 
 Field::~Field()

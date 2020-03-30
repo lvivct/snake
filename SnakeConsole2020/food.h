@@ -1,15 +1,11 @@
 #pragma once
-#include"Coor.h"
+#include "Point.h"
 #include <cstdlib>
 #include <ctime>
 
-class food
+class food : public Point
 {
 public:
-
-	Coor location;
-	char show_simbol;
-
 	food(Coor location, char show_simbol);
 
 	void change_location();

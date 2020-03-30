@@ -5,7 +5,5 @@ struct Coor
 	int	y;
 	
 	bool operator==(Coor Right);
-
-	void move(char direction);
 };
 
