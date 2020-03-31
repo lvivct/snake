@@ -11,6 +11,7 @@ public:
 
 	Field* operator=(Field& Right);
 
+	int get_size();
 	void update();
 	void show_field();
 	void add_item(Point* item);

@@ -9,11 +9,11 @@ void SnakeHead::increase_tail()
 		);
 }
 
-void SnakeHead::move(char direction)
+bool SnakeHead::move(char direction, int size)
 {
-	SnakeBody* ptr = ptr_next;
-
-	if (this != ptr)	
-		ptr = ptr->get_ptr_next();
 	Point::move(direction);
+	if(location.in(size, size))
+		return false;
+	else
+		return true;
 }

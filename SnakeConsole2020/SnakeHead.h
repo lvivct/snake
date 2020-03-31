@@ -8,6 +8,6 @@ public:
 	SnakeHead(Coor location, char show_simbol);
 
 	void increase_tail();
-	void move(char direction) override;
+	bool move(char direction, int size) override;
 };
 

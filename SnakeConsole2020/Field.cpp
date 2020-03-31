@@ -6,13 +6,18 @@ Field::Field(int size = 0)
 	this->size = size;
 	field = new char* [size];
 	for (int i = 0; i < size; ++i)
-		field[i] = new char[size]();
+		field[i] = new char[size];
 }
 
 Field* Field::operator=(Field& Right)
 {
 	field = Right.field;
 	return this;
+}
+
+int Field::get_size()
+{
+	return size;
 }
 
 void Field::update()
@@ -24,12 +29,25 @@ void Field::update()
 
 void Field::show_field()
 {
+	std::cout << char(218);
+	for (int i = 0; i < size; ++i)
+		std::cout << char(196);
+	std::cout << char(191) << '\n';
+
 	for (int i = 0; i < size; ++i)
 	{
+		std::cout << char(179);
+
 		for (int j = 0; j < size; ++j)
-			std::cout << field[i][j] << ' ';
-		std::cout << '\n';
+			std::cout << field[i][j];
+
+		std::cout << char(179) << '\n';
 	}
+
+	std::cout << char(192);
+	for (int i = 0; i < size; ++i)
+		std::cout << char(196);
+	std::cout << char(217) << '\n';
 }
 
 void Field::add_item(Point* item)

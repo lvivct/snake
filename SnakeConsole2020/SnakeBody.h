@@ -8,7 +8,7 @@ protected:
 public:
 	SnakeBody(Coor location, char show_simbol, SnakeBody* ptr_next = nullptr);
 
-	virtual void move(char direction);
+	virtual bool move(char direction, int size);
 	virtual void increase_tail() {}
 
 	SnakeBody* get_ptr_next();

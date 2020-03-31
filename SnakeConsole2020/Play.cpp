@@ -16,12 +16,22 @@ void Play::start()
 		char direction;
 		std::cin >> direction;
 		SnakeBody* ptr = snake;
+		bool game_over = false;
 		do
 		{
-			ptr->move(direction);
+			game_over = ptr->move(direction, main_field->get_size());
+			if (game_over)
+				break;
 			main_field->add_item(ptr->get_ptr_next());
 			ptr = ptr->get_ptr_next();
 		} while (ptr != snake);
+
+		if (game_over)
+		{
+			system("cls");
+			std::cout << "game_over";
+			break;
+		}
 
 		if (aplle->get_coor() == snake->get_coor())
 		{
@@ -40,4 +50,5 @@ Play::~Play()
 {
 	delete snake;
 	delete main_field;
+	delete aplle;
 }

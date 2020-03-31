@@ -1,8 +1,9 @@
 #include "SnakeBody.h"
 
-void SnakeBody::move(char direction)
+bool SnakeBody::move(char direction, int size)
 {
 	location = ptr_next->location;
+	return false;
 }
 
 SnakeBody::SnakeBody(Coor location, char show_simbol, SnakeBody* ptr_next)
