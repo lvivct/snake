@@ -55,6 +55,11 @@ void Field::add_item(Point* item)
 	field[item->get_coor().y][item->get_coor().x] = item->get_show_simbol();
 }
 
+bool Field::is_clear(Coor coor)
+{
+	return field[coor.y][coor.x] == ' ';
+}
+
 Field::~Field()
 {
 	for (int i = 0; i < size; ++i)

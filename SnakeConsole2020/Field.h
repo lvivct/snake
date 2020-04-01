@@ -15,6 +15,7 @@ public:
 	void update();
 	void show_field();
 	void add_item(Point* item);
+	bool is_clear(Coor coor);
 
 	~Field();
 };

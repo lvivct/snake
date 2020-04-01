@@ -8,6 +8,6 @@ class food : public Point
 public:
 	food(Coor location, char show_simbol);
 
-	void change_location();
+	void change_location(int size);
 };
 

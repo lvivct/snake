@@ -2,7 +2,7 @@
 
 int main()
 {
-	int size = 10;
+	int size = 4;
 	char head_simbol = '+';
 	Play qq(head_simbol, size);
 	qq.start();

@@ -3,7 +3,7 @@
 
 Play::Play(char head_simbol = '+', int size = 0)
 {
-	aplle = new food({ 5,5 }, '@');
+	aplle = new food({ 2,2 }, '@');
 	snake = new SnakeHead({ 1,2 }, head_simbol);
 	main_field = new Field(size);
 }
@@ -15,17 +15,19 @@ void Play::start()
 		main_field->update();
 		char direction;
 		std::cin >> direction;
-		SnakeBody* ptr = snake;
+
+		SnakeBody* ptr = snake->get_ptr_next();
 		bool game_over = false;
-		do
-		{
-			game_over = ptr->move(direction, main_field->get_size());
-			if (game_over)
-				break;
+
+		while (ptr != snake)
+		{	
+			ptr->move(direction, main_field->get_size());
 			main_field->add_item(ptr->get_ptr_next());
 			ptr = ptr->get_ptr_next();
-		} while (ptr != snake);
-
+		} ;
+		game_over = ptr->move(direction, main_field->get_size()) 
+				|| !main_field->is_clear(ptr->get_coor());
+		main_field->add_item(ptr);
 		if (game_over)
 		{
 			system("cls");
@@ -35,10 +37,11 @@ void Play::start()
 
 		if (aplle->get_coor() == snake->get_coor())
 		{
-			aplle->change_location();
+			aplle->change_location(main_field->get_size());
 			snake->increase_tail();
 		}
-
+		while(!main_field->is_clear(aplle->get_coor()))
+			aplle->change_location(main_field->get_size());
 		main_field->add_item(aplle);
 		
 		system("cls");
